@@ -12,7 +12,7 @@ The **main objectives** of this methodology are:
  
 ii) a set of tools gathered in an open-source sotfware, which **facilitate water utilities worldwide** undergoing a digital transformation, big data and AI algorithms. 
 
-
+-----------------------------------------------------
 
 With access to **big data, AI algorithms should provide** the following functionalities:
 
