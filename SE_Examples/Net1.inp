@@ -1,0 +1,178 @@
+[TITLE]
+ EPANET Example Network 1
+A simple example of modeling chlorine decay. Both bulk and
+wall reactions are included. 
+
+[JUNCTIONS]
+;ID              	Elev        	Demand      	Pattern         
+ J10              	216.408        	0           	                	;
+ J11              	216.408        	34.0687       	                	;
+ J12              	213.36         	34.0687        	                	;
+ J13              	211.836        	22.7125        	                	;
+ J21              	213.36         	34.0687        	                	;
+ J22              	211.836        	45.4249        	                	;
+ J23              	210.312        	34.0687        	                	;
+ J31              	213.36         	22.7125        	                	;
+ J32              	216.408        	22.7125        	                	;
+
+[RESERVOIRS]
+;ID              	Head        	Pattern         
+ R1               	243.84        	                	;
+
+[TANKS]
+;ID              	Elevation   	InitLevel   	MinLevel    	MaxLevel    	Diameter    	MinVol      	VolCurve
+ T1               	259.08         	36.576         	30.48         	45.72         	6        	0           	                	;
+
+[PIPES]
+;ID              	Node1           	Node2           	Length      	Diameter    	Roughness   	MinorLoss   	Status
+ P10              	J10              	J11              	3209.544       	457.2           100         	0           	Open  	;
+ P11              	J11              	J12              	1609.344       	355.6         	100         	0           	Open  	;
+ P12              	J12              	J13              	1609.344       	254          	100         	0           	Open  	;
+ P21              	J21              	J22              	1609.344       	254          	100         	0           	Open  	;
+ P22              	J22              	J23              	1609.344       	304.8         	100         	0           	Open  	;
+ P31              	J31              	J32              	1609.344       	152.4           100         	0           	Open  	;
+ P110             	T1               	J12              	60.96         	457.2         	100         	0           	Open  	;
+ P111             	J11              	J21              	1609.344       	254          	100         	0           	Open  	;
+ P112             	J12              	J22              	1609.344       	304.8         	100         	0           	Open  	;
+ P113             	J13              	J23              	1609.344       	203.2         	100         	0           	Open  	;
+ P121             	J21              	J31              	1609.344       	203.2         	100         	0           	Open  	;
+ P122             	J22              	J32              	1609.344       	152.4           100         	0           	Open  	;
+
+[PUMPS]
+;ID              	Node1           	Node2           	Parameters
+ PU1               	R1               	J10              	HEAD 1	;
+
+[VALVES]
+;ID              	Node1           	Node2           	Diameter    	Type	Setting     	MinorLoss   
+
+[TAGS]
+
+[DEMANDS]
+;Junction        	Demand      	Pattern         	Category
+
+[STATUS]
+;ID              	Status/Setting
+
+[PATTERNS]
+;ID              	Multipliers
+;Demand Pattern
+ 1               	1.0         	1.2         	1.4         	1.6         	1.4         	1.2         
+ 1               	1.0         	0.8         	0.6         	0.4         	0.6         	0.8         
+
+[CURVES]
+;ID              	X-Value     	Y-Value
+;PUMP: Pump Curve for Pump 9
+ 1               	340.687        	76.2         
+
+[CONTROLS]
+ LINK PU1 OPEN IF NODE T1 BELOW 33.528
+ LINK PU1 CLOSED IF NODE T1 ABOVE 42.672
+
+
+[RULES]
+
+[ENERGY]
+ Global Efficiency  	75
+ Global Price       	0.0
+ Demand Charge      	0.0
+
+[EMITTERS]
+;Junction        	Coefficient
+
+[QUALITY]
+;Node            	InitQual
+ J10              	0.5
+ J11              	0.5
+ J12              	0.5
+ J13              	0.5
+ J21              	0.5
+ J22              	0.5
+ J23              	0.5
+ J31              	0.5
+ J32              	0.5
+ R1               	1.0
+ T1               	1.0
+
+[SOURCES]
+;Node            	Type        	Quality     	Pattern
+
+[REACTIONS]
+;Type     	Pipe/Tank       	Coefficient
+
+
+[REACTIONS]
+ Order Bulk            	1
+ Order Tank            	1
+ Order Wall            	1
+ Global Bulk           	-.5
+ Global Wall           	-1
+ Limiting Potential    	0.0
+ Roughness Correlation 	0.0
+
+[MIXING]
+;Tank            	Model
+
+[TIMES]
+ Duration           	12:00 
+ Hydraulic Timestep 	0:10 
+ Quality Timestep   	0:05 
+ Pattern Timestep   	1:00 
+ Pattern Start      	0:00 
+ Report Timestep    	1:00 
+ Report Start       	0:00 
+ Start ClockTime    	0:00
+ Statistic          	None
+
+[REPORT]
+ Status             	Yes
+ Summary            	No
+ Page               	0
+
+[OPTIONS]
+ Units              	CMH
+ Headloss           	H-W
+ Specific Gravity   	1.0
+ Viscosity          	1.0
+ Trials             	40
+ Accuracy           	0.001
+ CHECKFREQ          	2
+ MAXCHECK           	10
+ DAMPLIMIT          	0
+ Unbalanced         	Continue 10
+ Pattern            	1
+ Demand Multiplier  	1.0
+ Emitter Exponent   	0.5
+ Quality            	Chlorine mg/L
+ Diffusivity        	1.0
+ Tolerance          	0.01
+
+[COORDINATES]
+;Node            	X-Coord         	Y-Coord
+ J10              	20.00           	70.00           
+ J11              	30.00           	70.00           
+ J12              	50.00           	70.00           
+ J13              	70.00           	70.00           
+ J21              	30.00           	40.00           
+ J22              	50.00           	40.00           
+ J23              	70.00           	40.00           
+ J31              	30.00           	10.00           
+ J32              	50.00           	10.00           
+ R1               	10.00           	70.00           
+ T1               	50.00           	90.00           
+
+[VERTICES]
+;Link            	X-Coord         	Y-Coord
+
+[LABELS]
+;X-Coord           Y-Coord          Label & Anchor Node
+ 6.99             73.63            "Source"                 
+ 13.48            68.13            "Pump"                 
+ 43.85            91.21            "Tank"                 
+
+[BACKDROP]
+ DIMENSIONS     	7.00            	6.00            	73.00           	94.00           
+ UNITS          	None
+ FILE           	
+ OFFSET         	0.00            	0.00            
+
+[END]
