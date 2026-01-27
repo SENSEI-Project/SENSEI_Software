@@ -4,7 +4,7 @@
 TIP: Put your funding banner at docs/funding.png (or change the path below).
 Recommended size: ~1400×300 px, PNG.
 -->
-![Funding](docs/funding.png)
+![Funding](docs/ProjectFunding.png)
 
 This repository contains the **SENSEI software** released in the context of the project:
 
