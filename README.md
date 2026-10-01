@@ -1,5 +1,8 @@
 # SENSEI — Smart watEr NetworkS using artificial intEllIgence (SENSEI_Software)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 <!--
 TIP: Put your funding banner at docs/funding.png (or change the path below).
 Recommended size: ~1400×300 px, PNG.
@@ -24,6 +27,22 @@ User guides shipped with the tools are the **authoritative reference** for input
 - Snapshot SE guide: `Snapshot_SE_UserGuide_ENG.pdf` 
 
 Files available in Spanish.
+
+---
+
+## Archived releases and persistent identifier
+
+Every tagged release of this repository is **automatically archived in [Zenodo](https://zenodo.org/)**, which mints a persistent DOI for it. The archived record and this repository mirror each other: the Zenodo record links back here, and the DOI badge above resolves to the archive.
+
+Two DOIs exist, and they are not interchangeable:
+
+| DOI | Resolves to | Use it when |
+|---|---|---|
+| **Concept DOI** — [10.5281/zenodo.XXXXXXX](https://doi.org/10.5281/zenodo.XXXXXXX) | Always the **latest** archived version | Citing SENSEI as a tool, in general |
+| **Version DOI** | One **specific** release | Reporting results that must be reproducible against an exact build |
+
+The version DOI of each release is listed on its Zenodo record. For reproducibility of published results, cite the version DOI corresponding to the release you ran.
+
 ---
 
 ## Quick start (Windows)
@@ -78,6 +97,7 @@ Top-level content:
 - `Multiperiod_SE.zip` — pseudo-dynamic SE tool (ZIP; extract to run)
 - `Snapshot_SE.zip` — snapshot SE tool (ZIP; extract to run)
 - `docs/` — documentation assets (e.g., funding banner)
+- `.zenodo.json`, `CITATION.cff` — archival and citation metadata
 
 After extracting each ZIP, you will find:
 - the executable (`*_SENSEI.exe`)
@@ -147,14 +167,33 @@ Running the provided examples as described in each guide reproduces the experime
 
 ## Citation (please cite if you use SENSEI)
 
-If you use this software (executables, configurations, examples, or derived workflows) in academic or technical work, please cite:
+If you use this software (executables, configurations, examples, or derived workflows) in academic or technical work, please cite **the archived software release** and, where appropriate, **the publication describing the method**.
+
+### Software
+
+Mínguez, R., Peñas, C., Martínez Alzamora, F., and Montalvo, I. (2026).
+**SENSEI: software for model calibration and state estimation in water distribution networks** [Computer software]. Zenodo.
+https://doi.org/10.5281/zenodo.XXXXXXX
+
+```bibtex
+@software{MinguezEtAl2026SENSEIsoftware,
+  title     = {{SENSEI}: software for model calibration and state estimation in water distribution networks},
+  author    = {M{\'i}nguez, Roberto and Pe{\~n}as, Carlos and Mart{\'i}nez Alzamora, Fernando and Montalvo, Idel},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.XXXXXXX},
+  url       = {https://doi.org/10.5281/zenodo.XXXXXXX},
+  version   = {v1.0.0}
+}
+```
+
+### Method
 
 Roberto Mínguez, Carlos Peñas, Fernando Martínez Alzamora, Idel Montalvo (2026).  
 **Walking towards digital twins in water distribution networks: SENSEI software tool based on state estimation.**  
 *Working paper in Statistics and Econometrics* **2026-01** (ISSN 2387-0303).  
 https://hdl.handle.net/10016/49039
 
-### BibTeX
 ```bibtex
 @techreport{MinguezEtAl2026SENSEI,
   title       = {Walking towards digital twins in water distribution networks: SENSEI software tool based on state estimation},
@@ -166,6 +205,8 @@ https://hdl.handle.net/10016/49039
   url         = {https://hdl.handle.net/10016/49039}
 }
 ```
+
+GitHub's *Cite this repository* button reads `CITATION.cff` and will produce an equivalent citation.
 
 ---
 
@@ -183,4 +224,4 @@ People interested in **source files for use, improvement and/or adaptation** may
 
 This repository is released under the **MIT License** (see `LICENSE`).
 
-It may include or depend on **third-party components** distributed under their own licenses; see `THIRD_PARTY_NOTICES.md`.
+It may include or depend on **third-party components** distributed under their own licenses; see [`THIRD_PARTY_NOTES.md`](THIRD_PARTY_NOTES.md).
