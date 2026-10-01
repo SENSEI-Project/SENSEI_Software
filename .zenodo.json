@@ -5,20 +5,47 @@
   "access_right": "open",
   "license": "MIT",
   "creators": [
-    { "name": "Mínguez, Roberto",
+    {
+      "name": "Mínguez, Roberto",
       "affiliation": "Department of Statistics, Universidad Carlos III de Madrid, Madrid, Spain",
-      "orcid": "0000-0001-7180-3845" },
-    { "name": "Peñas, Carlos",
-      "affiliation": "Department of Statistics, Universidad Carlos III de Madrid, Madrid, Spain" },
-    { "name": "Martínez Alzamora, Fernando",
-      "affiliation": "Department of Hydraulic and Environmental Engineering, Universitat Politècnica de València, Valencia, Spain" },
-    { "name": "Montalvo, Idel",
-      "affiliation": "IngeniousWare GmbH, Karlsruhe, Germany" }
+      "orcid": "0000-0001-7180-3845"
+    },
+    {
+      "name": "Peñas, Carlos",
+      "affiliation": "Department of Statistics, Universidad Carlos III de Madrid, Madrid, Spain"
+    },
+    {
+      "name": "Martínez Alzamora, Fernando",
+      "affiliation": "Department of Hydraulic and Environmental Engineering, Universitat Politècnica de València, Valencia, Spain"
+    },
+    {
+      "name": "Montalvo, Idel",
+      "affiliation": "IngeniousWare GmbH, Karlsruhe, Germany"
+    }
+  ],
+  "description": "<p>SENSEI provides three Windows tools for <strong>model calibration</strong> and <strong>state estimation</strong> in water distribution networks modelled with EPANET. All three solve the same weighted least-squares problem under different partitions of the unknowns, using EPANET as the hydraulic oracle for forward evaluations and numerical sensitivities, so that pumps, valves, emitters and control rules are inherited rather than reimplemented.</p><ul><li><strong>Calibration</strong> &mdash; multi-period calibration of pump curves, valve settings, district roughness coefficients and tank geometry, solved with Levenberg&ndash;Marquardt and optional staged (coordinate-descent) schedules.</li><li><strong>Multiperiod (pseudo-dynamic) State Estimation</strong> &mdash; sequential estimation over consecutive time periods coupled through tank storage, admitting time-aggregated measurements natively.</li><li><strong>Snapshot State Estimation</strong> &mdash; instantaneous single-period estimation solved with Gauss&ndash;Newton.</li></ul><p>Every tool returns posterior covariances, so each estimate carries a confidence interval, together with normalised residuals that support a diagnostic loop for sensor bias, undetected topology changes and leaks.</p><p>This deposit is the archived snapshot of the GitHub repository <a href=\"https://github.com/SENSEI-Project/SENSEI_Software\">SENSEI-Project/SENSEI_Software</a>. It contains the executables, the example networks and measurement sets, the fixed-name configuration files and the user guides (English and Spanish) needed to reproduce the reported results.</p><p><strong>Funding.</strong> SENSEI: Smart watEr NetworkS using artificial intEllIgence, grant CNS2022-135472, funded by MCIN/AEI/10.13039/501100011033 and by the European Union NextGenerationEU/PRTR.</p>",
+  "keywords": [
+    "water distribution networks",
+    "state estimation",
+    "model calibration",
+    "EPANET",
+    "digital twin",
+    "weighted least squares",
+    "Levenberg-Marquardt",
+    "observability analysis",
+    "leak detection",
+    "uncertainty quantification"
   ],
   "related_identifiers": [
-    { "identifier": "https://github.com/SENSEI-Project/SENSEI_Software",
-      "relation": "isSupplementTo", "scheme": "url" },
-    { "identifier": "https://hdl.handle.net/10016/49039",
-      "relation": "isDocumentedBy", "scheme": "handle" }
+    {
+      "identifier": "https://github.com/SENSEI-Project/SENSEI_Software",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://hdl.handle.net/10016/49039",
+      "relation": "isDocumentedBy",
+      "scheme": "handle"
+    }
   ]
 }
