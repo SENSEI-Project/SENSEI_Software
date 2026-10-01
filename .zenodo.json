@@ -1,0 +1,24 @@
+{
+  "upload_type": "software",
+  "title": "SENSEI: software for model calibration and state estimation in water distribution networks",
+  "language": "eng",
+  "access_right": "open",
+  "license": "MIT",
+  "creators": [
+    { "name": "Mínguez, Roberto",
+      "affiliation": "Department of Statistics, Universidad Carlos III de Madrid, Madrid, Spain",
+      "orcid": "0000-0001-7180-3845" },
+    { "name": "Peñas, Carlos",
+      "affiliation": "Department of Statistics, Universidad Carlos III de Madrid, Madrid, Spain" },
+    { "name": "Martínez Alzamora, Fernando",
+      "affiliation": "Department of Hydraulic and Environmental Engineering, Universitat Politècnica de València, Valencia, Spain" },
+    { "name": "Montalvo, Idel",
+      "affiliation": "IngeniousWare GmbH, Karlsruhe, Germany" }
+  ],
+  "related_identifiers": [
+    { "identifier": "https://github.com/SENSEI-Project/SENSEI_Software",
+      "relation": "isSupplementTo", "scheme": "url" },
+    { "identifier": "https://hdl.handle.net/10016/49039",
+      "relation": "isDocumentedBy", "scheme": "handle" }
+  ]
+}
