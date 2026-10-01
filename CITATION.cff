@@ -1,0 +1,59 @@
+cff-version: 1.2.0
+message: "If you use SENSEI, please cite the archived software release below."
+type: software
+title: "SENSEI: software for model calibration and state estimation in water distribution networks"
+abstract: >-
+  Three Windows tools for model calibration and state estimation in water
+  distribution networks modelled with EPANET: multi-period calibration,
+  pseudo-dynamic (multiperiod) state estimation and snapshot state estimation.
+  All solve the same weighted least-squares problem under different partitions
+  of the unknowns, using EPANET as the hydraulic oracle, and return posterior
+  covariances and normalised residuals.
+version: 1.0.0
+date-released: 2026-10-01
+license: MIT
+repository-code: "https://github.com/SENSEI-Project/SENSEI_Software"
+authors:
+  - family-names: "Mínguez"
+    given-names: "Roberto"
+    orcid: "https://orcid.org/0000-0001-7180-3845"
+    affiliation: "Department of Statistics, Universidad Carlos III de Madrid, Madrid, Spain"
+    email: "rminguez@est-econ.uc3m.es"
+  - family-names: "Peñas"
+    given-names: "Carlos"
+    affiliation: "Department of Statistics, Universidad Carlos III de Madrid, Madrid, Spain"
+  - family-names: "Martínez Alzamora"
+    given-names: "Fernando"
+    affiliation: "Department of Hydraulic and Environmental Engineering, Universitat Politècnica de València, Valencia, Spain"
+  - family-names: "Montalvo"
+    given-names: "Idel"
+    affiliation: "IngeniousWare GmbH, Karlsruhe, Germany"
+keywords:
+  - water distribution networks
+  - state estimation
+  - model calibration
+  - EPANET
+  - digital twin
+  - weighted least squares
+  - Levenberg-Marquardt
+  - observability analysis
+  - leak detection
+  - uncertainty quantification
+references:
+  - type: report
+    title: "Walking towards digital twins in water distribution networks: SENSEI software tool based on state estimation"
+    authors:
+      - family-names: "Mínguez"
+        given-names: "Roberto"
+      - family-names: "Peñas"
+        given-names: "Carlos"
+      - family-names: "Martínez Alzamora"
+        given-names: "Fernando"
+      - family-names: "Montalvo"
+        given-names: "Idel"
+    year: 2026
+    number: "2026-01"
+    institution:
+      name: "Universidad Carlos III de Madrid, Working Papers in Statistics and Econometrics"
+    issn: "2387-0303"
+    url: "https://hdl.handle.net/10016/49039"
