@@ -1,6 +1,6 @@
 # SENSEI — Smart watEr NetworkS using artificial intEllIgence (SENSEI_Software)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23087359.svg)](https://doi.org/10.5281/zenodo.23087359)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 <!--
@@ -38,8 +38,8 @@ Two DOIs exist, and they are not interchangeable:
 
 | DOI | Resolves to | Use it when |
 |---|---|---|
-| **Concept DOI** — [10.5281/zenodo.XXXXXXX](https://doi.org/10.5281/zenodo.XXXXXXX) | Always the **latest** archived version | Citing SENSEI as a tool, in general |
-| **Version DOI** | One **specific** release | Reporting results that must be reproducible against an exact build |
+| **Concept DOI** — [10.5281/zenodo.23087359](https://doi.org/10.5281/zenodo.23087359) | Always the **latest** archived version | Citing SENSEI as a tool, in general |
+| **Version DOI** — e.g. [10.5281/zenodo.23087360](https://doi.org/10.5281/zenodo.23087360) for `v1.0.0` | One **specific** release | Reporting results that must be reproducible against an exact build |
 
 The version DOI of each release is listed on its Zenodo record. For reproducibility of published results, cite the version DOI corresponding to the release you ran.
 
@@ -173,7 +173,7 @@ If you use this software (executables, configurations, examples, or derived work
 
 Mínguez, R., Peñas, C., Martínez Alzamora, F., and Montalvo, I. (2026).
 **SENSEI: software for model calibration and state estimation in water distribution networks** [Computer software]. Zenodo.
-https://doi.org/10.5281/zenodo.XXXXXXX
+https://doi.org/10.5281/zenodo.23087359
 
 ```bibtex
 @software{MinguezEtAl2026SENSEIsoftware,
@@ -181,9 +181,8 @@ https://doi.org/10.5281/zenodo.XXXXXXX
   author    = {M{\'i}nguez, Roberto and Pe{\~n}as, Carlos and Mart{\'i}nez Alzamora, Fernando and Montalvo, Idel},
   year      = {2026},
   publisher = {Zenodo},
-  doi       = {10.5281/zenodo.XXXXXXX},
-  url       = {https://doi.org/10.5281/zenodo.XXXXXXX},
-  version   = {v1.0.0}
+  doi       = {10.5281/zenodo.23087359},
+  url       = {https://doi.org/10.5281/zenodo.23087359}
 }
 ```
 
