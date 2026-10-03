@@ -9,10 +9,18 @@ abstract: >-
   All solve the same weighted least-squares problem under different partitions
   of the unknowns, using EPANET as the hydraulic oracle, and return posterior
   covariances and normalised residuals.
-version: 1.0.0
+version: 1.0.1
 date-released: 2026-10-01
 license: MIT
 repository-code: "https://github.com/SENSEI-Project/SENSEI_Software"
+doi: 10.5281/zenodo.23087359
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23087359
+    description: "Concept DOI: always resolves to the latest archived version"
+  - type: doi
+    value: 10.5281/zenodo.23087360
+    description: "Version DOI of release v1.0.0"
 authors:
   - family-names: "Mínguez"
     given-names: "Roberto"
