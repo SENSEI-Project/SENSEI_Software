@@ -4,6 +4,13 @@ SENSEI Software is released under the MIT License (see `LICENSE`). The
 components listed below are **not** covered by that licence. Each is governed
 by its own terms, and users are responsible for complying with them.
 
+**This repository ships no third-party code and no third-party binaries in
+its source tree.** EPANET and SuiteSparse are downloaded by the user before
+building; `src/DEPENDENCIES.md` says what and from where. The only place a
+third-party binary appears is inside the prebuilt executable archives
+(`Calibration.zip`, `Multiperiod_SE.zip`, `Snapshot_SE.zip`), which bundle the
+runtime DLLs needed to run them.
+
 This file supersedes an earlier, generic version that named no component.
 
 ---
@@ -11,12 +18,16 @@ This file supersedes an earlier, generic version that named no component.
 ## EPANET
 
 SENSEI calls the EPANET 2.2 toolkit through `epanet2.dll` and compiles against
-the public EPANET headers (`epanet2_2.h`, `epanet2_enums.h`, `types.h` in
-`src/include/`).
+its public API header `epanet2_2.h`, which in turn includes
+`epanet2_enums.h`.
 
 EPANET is developed by the United States Environmental Protection Agency and
 maintained as open source by the Open Water Analytics community at
 <https://github.com/OpenWaterAnalytics/EPANET>, under the MIT License.
+
+Neither the EPANET headers nor any EPANET binary is committed to this
+repository. You obtain them yourself; see `src/DEPENDENCIES.md` §1, which
+includes checksums for the header versions SENSEI was developed against.
 
 **Important:** the `epanet2.dll` distributed inside the ZIP archives in this
 repository (418,304 bytes) is **not** a stock OWA-EPANET build. It comes from
@@ -29,7 +40,9 @@ and has not been tested against SENSEI. See `PROVENANCE.md` and
 
 SENSEI solves the normal equations with CHOLMOD and its ordering libraries,
 from SuiteSparse by Timothy A. Davis and contributors
-(<https://github.com/DrTimothyAldenDavis/SuiteSparse>).
+(<https://github.com/DrTimothyAldenDavis/SuiteSparse>). It is installed from
+your platform's package manager, not vendored here; see
+`src/DEPENDENCIES.md` §2.
 
 **SuiteSparse is not uniformly licensed, and this matters for redistribution.**
 Different CHOLMOD modules carry different terms: Core and Cholesky are

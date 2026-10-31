@@ -1,3 +1,12 @@
+# ------------------------------------------------------------------
+#  Third-party files you download yourself (see src/DEPENDENCIES.md).
+#  This repository ships no third-party code or binaries; these entries
+#  make sure a stray copy is never committed by accident.
+# ------------------------------------------------------------------
+src/libs/
+src/include/epanet2*.h
+src/include/types.h
+
 # Build outputs
 src/bin/
 src/dist/
@@ -7,9 +16,6 @@ src/dist/
 
 # Backups left by tools/make_pauses_optional.py
 *.bak
-
-# EPANET library the user must supply (see src/build/BUILD.md section 5)
-src/libs/
 
 # Stray nested clone of this same repository, left by an accidental
 # "git clone" inside the working tree. Safe to delete; ignored so that

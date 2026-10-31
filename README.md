@@ -96,7 +96,7 @@ Top-level content:
 - `Calibration.zip` — calibration tool (ZIP; extract to run)
 - `Multiperiod_SE.zip` — pseudo-dynamic SE tool (ZIP; extract to run)
 - `Snapshot_SE.zip` — snapshot SE tool (ZIP; extract to run)
-- `src/` — **the C sources**, with build instructions in `src/build/BUILD.md`
+- `src/` — **the C sources**, with `src/DEPENDENCIES.md` and `src/build/BUILD.md`
 - `docs/` — documentation assets (e.g., funding banner)
 - `PROVENANCE.md` — which binary produced which result, and what is not yet verified
 - `THIRD_PARTY_NOTES.md` — EPANET, SuiteSparse and runtime licences
@@ -122,7 +122,12 @@ cd src
 make -f build/sensei_build.mk
 ```
 
-Read **[`src/build/BUILD.md`](src/build/BUILD.md)** first. It gives the exact
+**This repository ships no third-party code or binaries.** EPANET and
+SuiteSparse you download yourself, once:
+**[`src/DEPENDENCIES.md`](src/DEPENDENCIES.md)** says exactly what, from
+where, and how to verify it.
+
+Then read **[`src/build/BUILD.md`](src/build/BUILD.md)**. It gives the exact
 toolchain (GCC 14.2.0, MSYS2 MinGW-w64, C17, `-g`, no optimisation), the link
 line, the runtime DLLs, and — in §5 — the one dependency you have to supply
 yourself.
@@ -130,8 +135,9 @@ yourself.
 Two things to know before you start:
 
 - **EPANET.** SENSEI links against a private fork of EPANET whose sources we
-  cannot publish. The DLL ships inside the executable ZIPs but is not
-  committed as a loose file. `BUILD.md` §5 explains the options.
+  cannot publish. The DLL ships inside the executable ZIPs, from where you can
+  take it; nothing of EPANET is committed here. `DEPENDENCIES.md` §1 explains
+  the options and their consequences.
 - **Interactive pauses.** The programs pause at each stage so you can follow
   the computation. This is opt-in: set `SENSEI_INTERACTIVE=1` to enable it,
   leave it unset to run unattended. Batch reproduction needs it unset.

@@ -9,9 +9,14 @@ These instructions reproduce the toolchain the distributed executables were
 built with, recovered from the debug information embedded in those binaries:
 **GCC 14.2.0, MSYS2 MinGW-w64, x86_64, `-g`, no optimisation, C17**.
 
-Read `../../PROVENANCE.md` before relying on a build to reproduce published
-numbers. It records what is known about which binary produced which result,
-and what has not yet been verified.
+**Before anything else, read [`../DEPENDENCIES.md`](../DEPENDENCIES.md).**
+This repository ships no third-party code or binaries; you obtain EPANET and
+SuiteSparse yourself, and that page says exactly what to download and from
+where.
+
+Read `../../PROVENANCE.md` too if you intend to reproduce published numbers.
+It records what is known about which binary produced which result, and what
+has not yet been verified.
 
 ---
 
@@ -56,9 +61,9 @@ SuiteSparse from your package manager, and point `-L`/`-l` at the result.
 ```
 src/
 ├── core/        functions_SENSEI.c, messages_SENSEI.c
-├── include/     functions_SENSEI.h, messages_SENSEI.h,
-│                epanet2_2.h, epanet2_enums.h, types.h
-├── libs/        epanet2.lib, epanet2.dll   <-- NOT in this repository, see §5
+├── include/     functions_SENSEI.h, messages_SENSEI.h        (shipped)
+│                epanet2_2.h, epanet2_enums.h                 <-- you add these
+├── libs/        epanet2.lib, epanet2.dll                     <-- you create and fill this
 ├── calibration/     Calibration_SENSEI.c
 │                    GenerarMedidas_Calibration_SENSEI.c
 ├── multiperiod_se/  Multiperiod_SE_SENSEI.c
@@ -67,14 +72,14 @@ src/
 ├── snapshot_se/     Snapshot_SE_SENSEI.c
 │                    GenerarMedidas_Snapshot_SENSEI.c
 ├── build/       sensei_build.mk, BUILD.md, tasks.json
-└── tools/       make_pauses_optional.py
+├── tools/       make_pauses_optional.py
+└── DEPENDENCIES.md
 ```
 
-You must create `src/libs/` yourself and put an EPANET import library and DLL
-in it. The simplest route is to copy `epanet2.dll` out of any of the
-distributed ZIP archives at the root of this repository, which is the exact
-library the published results were produced with, and generate the matching
-import library from it. §5 explains why that DLL is not committed here.
+The two EPANET headers and the `libs/` directory are not in this repository
+by design: they are third-party artefacts and we do not redistribute them.
+`DEPENDENCIES.md` tells you where to get them, where to put them, and how to
+check you got the right ones. SuiteSparse needs nothing copied into the tree.
 
 ## 3. Build
 
@@ -135,27 +140,23 @@ with the DLLs copied in.
 
 SENSEI links against an `epanet2.dll` of 418,304 bytes, which is **not** a
 stock build of OWA-EPANET. It comes from a private fork maintained during the
-project. A stock EPANET 2.2 build produces a different DLL (474,624 bytes)
-and has not been tested against SENSEI.
+project, and **we are not able to publish its sources**. A stock EPANET 2.2
+build produces a different library (474,624 bytes) and has not been tested
+against SENSEI.
 
-**The fork's sources are not available in this repository, and we are not able
-to publish them.** What exists is the compiled DLL, its import library and the
-public EPANET headers in `include/`. This is the weakest link in the
-reproducibility chain and we state it plainly rather than leaving a reviewer
-to discover it.
+The fork's DLL ships inside the executable ZIP archives at the root of this
+repository, where it has always been distributed. It is not committed as a
+loose file here: this repository contains no third-party binaries.
 
-Three consequences:
+If exact reproduction of the published tables matters to you, take the DLL
+from those archives. If you build EPANET from upstream instead, verify
+against the small example networks shipped in the archives before trusting
+results on your own models — the API surface SENSEI uses is standard, but the
+fork has not been diffed against upstream line by line.
 
-1. The DLL is redistributed only inside the executable ZIP archives at the
-   root of this repository, where it has always shipped. It is not committed
-   as a loose file, because we cannot attach a source tree or a clear licence
-   statement to it. See `../../THIRD_PARTY_NOTES.md`.
-2. If you rebuild EPANET yourself from upstream, verify against the toy
-   networks shipped in the ZIPs before trusting results on your own models.
-   The API surface SENSEI uses is standard, but the fork has not been diffed
-   against upstream line by line.
-3. If exact reproduction of the published tables matters to you, use the DLL
-   from the ZIP archives rather than an upstream build.
+Full detail, including checksums for the headers:
+[`../DEPENDENCIES.md`](../DEPENDENCIES.md). Licensing:
+[`../../THIRD_PARTY_NOTES.md`](../../THIRD_PARTY_NOTES.md).
 
 ## 6. Interactive pauses
 

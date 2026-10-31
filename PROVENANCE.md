@@ -99,6 +99,12 @@ sources pass `gcc -fsyntax-only -std=c17` with no new diagnostics.
 
 **2. `functions_SENSEI.c` is the 17 December 2025 revision**, as noted above.
 
+**3. The EPANET headers were removed from `src/include/`** when the sources
+were published, together with an unused copy of EPANET's internal `types.h`
+that nothing in SENSEI includes. They are third-party files and we do not
+redistribute them. This changes nothing about the code: the two headers are
+restored by the user from upstream before building.
+
 Nothing else differs. No algorithm, constant, tolerance or output format was
 touched.
 
@@ -109,10 +115,11 @@ maintained during the project, not against stock OWA-EPANET (474,624 bytes).
 **The fork's sources are not available and we cannot publish them.**
 
 The DLL continues to ship inside the executable ZIP archives, where it always
-has. It is not committed as a loose file in `src/libs/`, because we cannot
-attach a source tree or a clear licence statement to it. Anyone rebuilding
-from source must supply an EPANET library themselves; `src/build/BUILD.md` §5
-sets out the options and their consequences.
+has. It is not committed as a loose file: **this repository contains no
+third-party code or binaries in its source tree**, by choice. Neither the
+EPANET headers nor the library are here. Anyone rebuilding from source
+supplies them, following `src/DEPENDENCIES.md`, which gives the download
+location and checksums for the header versions SENSEI was developed against.
 
 This is the weakest link in the chain and the one a reviewer will hit first.
 We would rather say so here than have it discovered.
