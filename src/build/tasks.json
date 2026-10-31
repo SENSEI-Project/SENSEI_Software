@@ -1,0 +1,106 @@
+// {
+// 	"version": "2.0.0",
+// 	"tasks": [
+// 		{
+// 			"type": "cppbuild",
+// 			"label": "C/C++: Build Active Network",
+// 			"command": "C:\\msys64\\mingw64\\bin\\gcc.exe",
+
+// 			"args": [
+// 				"-fdiagnostics-color=always",
+// 				"-g",
+// 				"${fileDirname}\\${fileBasenameNoExtension}.c",
+// 				"${workspaceFolder}/funciones_SENSEI.c",
+
+// 				"-o", "${fileDirname}\\${fileBasenameNoExtension}.exe",
+
+// 				// Rutas de include (headers locales)
+// 				"-I", "${workspaceFolder}\\include",
+
+// 				// Rutas de librerías locales
+// 				"-L", "${workspaceFolder}\\libs",
+
+// 				// Enlazar SuiteSparse y EPANET desde libs/
+// 				"-lsuitesparseconfig",
+// 				"-lcholmod",
+// 				"-lcolamd",
+// 				"-lamd",
+// 				"-lccolamd",
+// 				"-lcamd",
+// 				"-lepanet2",
+
+// 				// Librerías estándar
+// 				"-lm", "-pthread"
+// 			],
+
+// 			"options": {
+// 				"cwd": "${fileDirname}"
+// 			},
+// 			"problemMatcher": [
+// 				"$gcc"
+// 			],
+// 			"group": {
+// 				"kind": "build",
+// 				"isDefault": true
+// 			},
+// 			"detail": "Build the active network"
+// 		}
+// 	],
+// }
+
+
+
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: Build Active File",
+			"command": "C:\\msys64\\mingw64\\bin\\gcc.exe",
+
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"${fileDirname}\\${fileBasenameNoExtension}.c",
+				"${workspaceFolder}/functions_SENSEI.c",
+				"${workspaceFolder}/messages_SENSEI.c",  
+
+				"-o", "${fileDirname}\\${fileBasenameNoExtension}.exe",
+
+				// Rutas de include (headers locales)
+				"-I", "${workspaceFolder}\\include",
+
+				// Rutas de librerías locales
+				"-L", "${workspaceFolder}\\libs",
+
+				// Enlazar SuiteSparse y EPANET
+				"-lsuitesparseconfig",
+				"-lcholmod",
+				"-lcolamd",
+				"-lamd",
+				"-lccolamd",
+				"-lcamd",
+				"-lepanet2",
+
+				// Librerías estándar
+				"-lm",
+
+				// Incrustar runtime de GCC en el exe (más portable)
+				"-static-libgcc",
+				"-static-libstdc++"
+			],
+
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "Build the active file"
+		}
+	],
+}

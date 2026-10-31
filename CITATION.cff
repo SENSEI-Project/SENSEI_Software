@@ -8,9 +8,10 @@ abstract: >-
   pseudo-dynamic (multiperiod) state estimation and snapshot state estimation.
   All solve the same weighted least-squares problem under different partitions
   of the unknowns, using EPANET as the hydraulic oracle, and return posterior
-  covariances and normalised residuals.
-version: 1.0.1
-date-released: 2026-10-01
+  covariances and normalised residuals. This release adds the complete C
+  source code and build instructions.
+version: 1.1.0
+date-released: 2026-10-31
 license: MIT
 repository-code: "https://github.com/SENSEI-Project/SENSEI_Software"
 doi: 10.5281/zenodo.23087359

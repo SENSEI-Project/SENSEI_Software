@@ -1,0 +1,21 @@
+# Build outputs
+src/bin/
+src/dist/
+*.o
+*.obj
+*.exe
+
+# Backups left by tools/make_pauses_optional.py
+*.bak
+
+# EPANET library the user must supply (see src/build/BUILD.md section 5)
+src/libs/
+
+# Stray nested clone of this same repository, left by an accidental
+# "git clone" inside the working tree. Safe to delete; ignored so that
+# "git add ." never picks it up.
+SENSEI_Software/
+
+# Windows / Google Drive cruft
+desktop.ini
+Thumbs.db

@@ -96,7 +96,10 @@ Top-level content:
 - `Calibration.zip` — calibration tool (ZIP; extract to run)
 - `Multiperiod_SE.zip` — pseudo-dynamic SE tool (ZIP; extract to run)
 - `Snapshot_SE.zip` — snapshot SE tool (ZIP; extract to run)
+- `src/` — **the C sources**, with build instructions in `src/build/BUILD.md`
 - `docs/` — documentation assets (e.g., funding banner)
+- `PROVENANCE.md` — which binary produced which result, and what is not yet verified
+- `THIRD_PARTY_NOTES.md` — EPANET, SuiteSparse and runtime licences
 - `.zenodo.json`, `CITATION.cff` — archival and citation metadata
 
 After extracting each ZIP, you will find:
@@ -105,6 +108,37 @@ After extracting each ZIP, you will find:
 - the fixed-name config file (`config_*.txt`)
 - example folders and CSV templates
 - the corresponding user guide PDF   
+
+---
+
+## Building from source
+
+The complete C implementation is in [`src/`](src/). It is seven command-line
+programs sharing two translation units, built with GCC; there is no build
+system beyond a compiler invocation.
+
+```bash
+cd src
+make -f build/sensei_build.mk
+```
+
+Read **[`src/build/BUILD.md`](src/build/BUILD.md)** first. It gives the exact
+toolchain (GCC 14.2.0, MSYS2 MinGW-w64, C17, `-g`, no optimisation), the link
+line, the runtime DLLs, and — in §5 — the one dependency you have to supply
+yourself.
+
+Two things to know before you start:
+
+- **EPANET.** SENSEI links against a private fork of EPANET whose sources we
+  cannot publish. The DLL ships inside the executable ZIPs but is not
+  committed as a loose file. `BUILD.md` §5 explains the options.
+- **Interactive pauses.** The programs pause at each stage so you can follow
+  the computation. This is opt-in: set `SENSEI_INTERACTIVE=1` to enable it,
+  leave it unset to run unattended. Batch reproduction needs it unset.
+
+If you intend to reproduce published numbers rather than just run the tools,
+read **[`PROVENANCE.md`](PROVENANCE.md)**. It records exactly what is known
+about which binary produced which table, and what has not been verified.
 
 ---
 
@@ -161,7 +195,9 @@ The repository packages include:
 - fixed-name configuration files,
 - and user guides.
 
-Running the provided examples as described in each guide reproduces the experiments and outputs reported in the paper cited below.   
+Running the provided examples as described in each guide reproduces the experiments and outputs reported in the paper cited below.
+
+The source code for those executables is in [`src/`](src/). Before treating a build of your own as a reproduction of the published tables, read [`PROVENANCE.md`](PROVENANCE.md): the chain from these sources to the published numbers has one step that has not yet been closed, and it is documented there.   
 
 ---
 
@@ -211,9 +247,9 @@ GitHub's *Cite this repository* button reads `CITATION.cff` and will produce an 
 
 ## Contact and source files
 
-This repository primarily distributes **executables** and example datasets for replication and use.
+This repository distributes the **C sources** (in [`src/`](src/)), the **executables** and example datasets for replication, use, improvement and adaptation.
 
-People interested in **source files for use, improvement and/or adaptation** may contact the project leader:
+Questions, bug reports and patches are welcome as issues and pull requests. For anything else, contact the project leader:
 
 **Roberto Mínguez** — rminguez@est-econ.uc3m.es
 
