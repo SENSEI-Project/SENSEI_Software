@@ -1,0 +1,153 @@
+[TITLE]
+
+[JUNCTIONS]
+ J11                                 216.4080
+ J12                                 213.3600
+ J13                                 211.8360
+ J21                                 213.3600
+ J22                                 211.8360
+ J23                                 210.3120
+ J31                                 213.3600
+ J32                                 216.4080
+
+[RESERVOIRS]
+
+[TANKS]
+ T1                                  229.5600       6.0960       0.0000      15.2400      15.3924       0.0000                                
+
+[PIPES]
+ P11                             J11                             J12                                1609.3440     304.8000     110.0000       0.0000       
+ P12                             J12                             J13                                1609.3440     254.0000     100.0000       0.0000       
+ P21                             J21                             J22                                1609.3440     203.2000     100.0000       0.0000       
+ P22                             J22                             J23                                1609.3440     203.2000      80.0000       0.0000       
+ P31                             J31                             J32                                1609.3440     152.4000     100.0000       0.0000       
+ P110                            T1                              J12                                  60.9600     355.0000     110.0000       0.0000       
+ P111                            J11                             J21                                1609.3440     203.2000     100.0000       0.0000       
+ P112                            J12                             J22                                1609.3440     304.8000      90.0000       0.0000       
+ P113                            J13                             J23                                1609.3440     203.2000     100.0000       0.0000       
+ P121                            J21                             J31                                1609.3440     203.2000      80.0000       0.0000       
+ P122                            J22                             J32                                1609.3440     152.4000      90.0000       0.0000       
+
+[PUMPS]
+
+[VALVES]
+
+[DEMANDS]
+ J11                                  34.068706                                
+ J12                                  34.068706                                
+ J13                                  22.712471                                
+ J21                                  34.068706                                
+ J22                                  45.424941                                
+ J23                                  34.068706                                
+ J31                                  22.712471                                
+ J32                                  22.712471                                
+
+[EMITTERS]
+
+[STATUS]
+
+[PATTERNS]
+
+[CURVES]
+
+[CONTROLS]
+
+[RULES]
+
+[QUALITY]
+
+[SOURCES]
+
+[MIXING]
+ T1                              MIXED          1.0000
+
+[REACTIONS]
+ ORDER  BULK            1.00
+ ORDER  WALL            1
+ ORDER  TANK            1.00
+ GLOBAL BULK            0.000000
+ GLOBAL WALL            0.000000
+
+[ENERGY]
+ GLOBAL EFFIC        75.0000
+ DEMAND CHARGE       0.0000
+
+[TIMES]
+ DURATION            0:00:00
+ HYDRAULIC TIMESTEP  1:00:00
+ QUALITY TIMESTEP    0:05:00
+ REPORT TIMESTEP     1:00:00
+ REPORT START        0:00:00
+ PATTERN TIMESTEP    1:00:00
+ PATTERN START       0:00:00
+ RULE TIMESTEP       0:06:00
+ START CLOCKTIME     0:00:00
+ STATISTIC           NONE
+
+[OPTIONS]
+ UNITS               CMH
+ PRESSURE            METERS
+ HEADLOSS            H-W
+ UNBALANCED          CONTINUE 10
+ QUALITY             NONE
+ DEMAND MULTIPLIER   1.0000
+ EMITTER EXPONENT    0.5000
+ VISCOSITY           1.000000
+ DIFFUSIVITY         1.000000
+ SPECIFIC GRAVITY    1.000000
+ TRIALS              40
+ ACCURACY            0.00100000
+ TOLERANCE           0.01000000
+ CHECKFREQ           2
+ MAXCHECK            10
+ DAMPLIMIT           0.00000000
+
+[REPORT]
+ PAGESIZE            0
+ STATUS              YES
+ SUMMARY             NO
+ ENERGY              NO
+ MESSAGES            YES
+ NODES               NONE
+ LINKS               NONE
+ Elevation           NO
+ Demand              PRECISION 2
+ Head                PRECISION 2
+ Pressure            PRECISION 2
+ Quality             NO
+ Length              NO
+ Diameter            NO
+ Flow                PRECISION 2
+ Velocity            PRECISION 2
+ Headloss            PRECISION 2
+ Quality             NO
+ State               NO
+ Setting             NO
+ Reaction            NO
+
+[COORDINATES]
+ J11                                  30.000000      70.000000
+ J12                                  50.000000      70.000000
+ J13                                  70.000000      70.000000
+ J21                                  30.000000      40.000000
+ J22                                  50.000000      40.000000
+ J23                                  70.000000      40.000000
+ J31                                  30.000000      10.000000
+ J32                                  50.000000      10.000000
+ T1                                   50.000000      90.000000
+
+[VERTICES]
+
+[TAGS]
+
+[LABELS]
+;X-Coord             Y-Coord             Label & Anchor Node
+43.850            	91.210            	"Tank"	
+
+[BACKDROP]
+  DIMENSIONS  	7.000             	6.000             	73.000            	94.000            
+ UNITS          	None
+ FILE           	
+ OFFSET         	0.00            	0.00            
+
+[END]

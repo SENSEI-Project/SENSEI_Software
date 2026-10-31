@@ -1,0 +1,19 @@
+LANGUAGE (ENG/ESP); ESP
+----------------------------------------
+PATH; SE_Examples_our_C-town
+----------------------------------------
+info_File; our_C-town.inp
+dm_File; NORMAL/dm_our_C-town.csv
+wlm_File; NORMAL/wlm_our_C-town.csv
+pm_File; NORMAL/pm_our_C-town.csv
+fm_File; NORMAL/fm_our_C-town.csv
+fm_avg_File; -
+----------------------------------------
+epsilon; -
+max_it; -
+tol; -
+lambda_init; -
+max_attempts; -
+emitter_ID; -
+emitter_coef; -
+period_to_add_emitter; -

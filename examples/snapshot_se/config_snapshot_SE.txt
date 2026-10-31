@@ -1,0 +1,14 @@
+LANGUAGE (ENG/ESP); ESP
+------------------------------------
+PATH; Examples_Red1
+------------------------------------
+info_File; Red1.inp
+dm_File; Example1/dm_Red1.csv
+wlm_File; Example1/wlm_Red1.csv
+pm_File; Example1/pm_Red1.csv
+fm_File; Example1/fm_Red1.csv
+------------------------------------
+max_it; -
+epsilon; -
+tol; -
+emitter_ID; -
